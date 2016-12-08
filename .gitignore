@@ -1,10 +1,12 @@
 # Compiled Source #
 ######################
 
-*.idea/
+.idea
+*.iml
 
 
 #Packages#
 ######################
+
 
 target
