@@ -17,7 +17,7 @@ public class HomePageUI {
 
     By searchInputBox = By.id("lst-ib");
 
-    By searchBtn = By.name("btnK");
+    By searchBtn = By.name("_fZl");
 
     public HomePageUI(WebDriver d){
         this.driver = d;
@@ -32,6 +32,6 @@ public class HomePageUI {
     }
 
     public WebElement getSearchButton(){
-        return driver.findElements(searchBtn).get(firstIndex);
+        return driver.findElement(searchBtn);
     }
 }

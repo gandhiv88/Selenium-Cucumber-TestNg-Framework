@@ -9,7 +9,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(
         format = {"pretty"},
         monochrome = true,
-        features = "src/main/resources",
+        features = "src/test/resources",
         glue = "stepdefinition"
 )
 public class launcher extends AbstractTestNGCucumberTests {
