@@ -7,19 +7,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 /**
  * Created by GXV8851 on 12/6/2016.
  */
-public class HomePage {
+public class HomePage extends BasePage{
 
-    WebDriver driver;
     HomePageUI ui;
-
+   // WebDriver driver;
     String websiteUrl = "https://www.google.com/";
 
+    public HomePage(WebDriver d) {
+        super(d);
+        System.out.println("second");
+        //this.driver = d;
+    }
+
     public void lauchWebPage(){
-
-        System.setProperty("webdriver.chrome.driver","C:\\Gandhi\\Personal\\Learnings\\Selenium\\Sample-Selenium-Framework\\drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
         driver.get(websiteUrl);
-
         ui = new HomePageUI(driver);
     }
 
@@ -43,6 +44,6 @@ public class HomePage {
     }
 
     public void validateResults(){
-        driver.quit();
+        System.out.println("Results validated");
     }
 }
