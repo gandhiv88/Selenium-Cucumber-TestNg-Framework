@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
- * Created by GXV8851 on 12/6/2016.
+ * Created by Gandhi on 12/6/2016.
  */
 public class HomePageUI {
 

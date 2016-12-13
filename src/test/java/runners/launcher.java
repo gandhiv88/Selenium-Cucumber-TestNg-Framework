@@ -5,7 +5,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 import org.testng.annotations.Test;
 
 /**
- * Created by GXV8851 on 11/29/2016.
+ * Created by Gandhi on 11/29/2016.
  */
 @CucumberOptions(
         format = {"pretty"},

@@ -8,7 +8,7 @@ import org.picocontainer.DefaultPicoContainer;
 import pageobjects.homepage.BasePage;
 
 /**
- * Created by GXV8851 on 12/13/2016.
+ * Created by Gandhi on 12/13/2016.
  */
 public class BaseStepDefinition implements En {
 
@@ -17,13 +17,7 @@ public class BaseStepDefinition implements En {
     BasePage page;
 
     public BaseStepDefinition() {
-       /* if(!intialized) {
-            System.out.println("First");
-            System.setProperty("webdriver.chrome.driver", "C:\\Gandhi\\Personal\\Learnings\\Selenium\\Sample-Selenium-Framework\\drivers\\chromedriver.exe");
-            driver = new ChromeDriver();
-            page = new BasePage(driver);
-            intialized = true;
-        }*/
+
         Before((Scenario scenario) ->
         {
             System.out.println("launched");

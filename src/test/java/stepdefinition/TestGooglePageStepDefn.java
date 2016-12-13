@@ -2,20 +2,19 @@ package stepdefinition;
 
 import cucumber.api.java8.En;
 import org.openqa.selenium.WebDriver;
-import org.picocontainer.DefaultPicoContainer;
 import pageobjects.homepage.HomePage;
 
 /**
- * Created by GXV8851 on 12/6/2016.
+ * Created by Gandhi on 12/6/2016.
  */
 
 
-public class SampleTestStepDefn implements En {
+public class TestGooglePageStepDefn implements En {
 
     WebDriver driver;
     HomePage hp;
     BaseStepDefinition baseStepDefinition;
-    public SampleTestStepDefn(BaseStepDefinition base) {
+    public TestGooglePageStepDefn(BaseStepDefinition base) {
         baseStepDefinition = base;
 
 
