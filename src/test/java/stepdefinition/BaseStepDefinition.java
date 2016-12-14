@@ -31,6 +31,7 @@ public class BaseStepDefinition implements En {
 
         After((Scenario scenario) ->{
             System.out.println("Quit");
+            intialized=false;
             driver.quit();
         });
     }

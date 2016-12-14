@@ -3,6 +3,6 @@ Feature: Write a BDD test
 
     Scenario: First test to search a value
       Given Launch amazon website
-      Then Google launch page is displayed
-      When Some criteria is searched in google
-      Then Search results are displayed
+      Then Amazon launch page is displayed
+      When Some criteria is searched in amazon
+      Then Amazon search results are displayed

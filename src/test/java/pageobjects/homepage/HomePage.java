@@ -11,7 +11,6 @@ public class HomePage extends BasePage{
 
     HomePageUI ui;
    // WebDriver driver;
-    String websiteUrl = "https://www.google.com/";
 
     public HomePage(WebDriver d) {
         super(d);
@@ -19,7 +18,7 @@ public class HomePage extends BasePage{
         //this.driver = d;
     }
 
-    public void lauchWebPage(){
+    public void lauchWebPage(String websiteUrl){
         driver.get(websiteUrl);
         ui = new HomePageUI(driver);
     }

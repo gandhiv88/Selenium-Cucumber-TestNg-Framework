@@ -21,7 +21,7 @@ public class TestGooglePageStepDefn implements En {
         Given("^Launch google website$", () -> {
             driver = baseStepDefinition.getDriver();
             hp = new HomePage(driver);
-            hp.lauchWebPage();
+            hp.lauchWebPage("https://www.google.com/");
         });
 
 
