@@ -1,22 +1,18 @@
 package runners;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.testng.TestNGCucumberRunner;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import io.cucumber.testng.TestNGCucumberRunner;
 import org.testng.annotations.Test;
 
 /**
  * Created by Gandhi on 11/29/2016.
  */
 @CucumberOptions(
-        format = {"pretty"},
         monochrome = true,
         features = "src/test/resources",
         glue = "stepdefinition"
 )
 
-public class launcher {
-    @Test
-    public void runTests(){
-        new TestNGCucumberRunner(getClass()).runCukes();
-    }
+public class launcher extends AbstractTestNGCucumberTests {
 }

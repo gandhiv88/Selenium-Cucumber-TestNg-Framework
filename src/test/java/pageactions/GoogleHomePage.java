@@ -1,26 +1,24 @@
-package pageobjects.homepage;
+package pageactions;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import pageobjects.homepage.GoogleHomePageUI;
 
 /**
  * Created by Gandhi on 12/6/2016.
  */
-public class HomePage extends BasePage{
+public class GoogleHomePage extends BasePage {
 
-    HomePageUI ui;
-   // WebDriver driver;
+    GoogleHomePageUI ui;
 
-    public HomePage(WebDriver d) {
+    public GoogleHomePage(WebDriver d) {
         super(d);
         System.out.println("second");
-        //this.driver = d;
     }
 
     public void lauchWebPage(String websiteUrl){
         driver.get(websiteUrl);
-        ui = new HomePageUI(driver);
+        ui = new GoogleHomePageUI(driver);
     }
 
     public void validateHomePage(){
@@ -42,7 +40,5 @@ public class HomePage extends BasePage{
 
     }
 
-    public void validateResults(){
-        System.out.println("Results validated");
-    }
+
 }

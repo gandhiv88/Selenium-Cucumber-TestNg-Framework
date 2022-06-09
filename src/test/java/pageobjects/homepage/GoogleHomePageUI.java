@@ -7,19 +7,17 @@ import org.openqa.selenium.WebElement;
 /**
  * Created by Gandhi on 12/6/2016.
  */
-public class HomePageUI {
+public class GoogleHomePageUI {
 
     WebDriver driver;
 
-    int firstIndex=0;
+    By googleLogo = By.xpath("//img[@alt='Google']");
 
-    By googleLogo = By.id("hplogo");
+    By searchInputBox = By.xpath("//input[@title='Search']");
 
-    By searchInputBox = By.id("lst-ib");
+    By searchBtn = By.xpath("//input[@value='Google Search']");
 
-    By searchBtn = By.name("_fZl");
-
-    public HomePageUI(WebDriver d){
+    public GoogleHomePageUI(WebDriver d){
         this.driver = d;
     }
 
@@ -32,6 +30,6 @@ public class HomePageUI {
     }
 
     public WebElement getSearchButton(){
-        return driver.findElement(searchBtn);
+        return driver.findElements(searchBtn).get(1);
     }
 }

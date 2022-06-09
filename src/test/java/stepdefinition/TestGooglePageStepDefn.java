@@ -1,8 +1,9 @@
 package stepdefinition;
 
-import cucumber.api.java8.En;
+import io.cucumber.java8.En;
 import org.openqa.selenium.WebDriver;
-import pageobjects.homepage.HomePage;
+import pageactions.GoogleHomePage;
+import pageactions.GoogleResultsPage;
 
 /**
  * Created by Gandhi on 12/6/2016.
@@ -12,7 +13,9 @@ import pageobjects.homepage.HomePage;
 public class TestGooglePageStepDefn implements En {
 
     WebDriver driver;
-    HomePage hp;
+    GoogleHomePage hp;
+
+    GoogleResultsPage grp;
     BaseStepDefinition baseStepDefinition;
     public TestGooglePageStepDefn(BaseStepDefinition base) {
         baseStepDefinition = base;
@@ -20,7 +23,7 @@ public class TestGooglePageStepDefn implements En {
 
         Given("^Launch google website$", () -> {
             driver = baseStepDefinition.getDriver();
-            hp = new HomePage(driver);
+            hp = new GoogleHomePage(driver);
             hp.lauchWebPage("https://www.google.com/");
         });
 
@@ -29,12 +32,13 @@ public class TestGooglePageStepDefn implements En {
             hp.validateHomePage();
         });
 
-        When("^Some criteria is searched in google$", () -> {
-            hp.searchInGoogle("Gandhi Valliappan");
-        });
-
         Then("Search results are displayed", () -> {
-            hp.validateResults();
+            grp = new GoogleResultsPage(driver);
+            grp.validateResults();
+        });
+        When("^\"([^\"]*)\" is searched in google$", (String searchTerm) -> {
+            hp.searchInGoogle(searchTerm);
+
         });
 
     }
