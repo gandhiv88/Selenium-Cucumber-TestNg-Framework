@@ -12,7 +12,7 @@ public class AmazonHomePage extends BasePage{
     }
 
     public void lauchWebPage(String url){
-        driver.get(url);
+        lauchUrl(url);
         ah = new AmazonHomePageUI(driver);
     }
 

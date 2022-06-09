@@ -20,14 +20,6 @@ public class TestGooglePageStepDefn implements En {
     public TestGooglePageStepDefn(BaseStepDefinition base) {
         baseStepDefinition = base;
 
-
-        Given("^Launch google website$", () -> {
-            driver = baseStepDefinition.getDriver();
-            hp = new GoogleHomePage(driver);
-            hp.lauchWebPage("https://www.google.com/");
-        });
-
-
         Then("^Google launch page is displayed$", () -> {
             hp.validateHomePage();
         });
@@ -39,6 +31,11 @@ public class TestGooglePageStepDefn implements En {
         When("^\"([^\"]*)\" is searched in google$", (String searchTerm) -> {
             hp.searchInGoogle(searchTerm);
 
+        });
+        Given("^Launch google website in \"([^\"]*)\"$", (String browser) -> {
+            driver = baseStepDefinition.getDriver(browser.toUpperCase());
+            hp = new GoogleHomePage(driver);
+            hp.launchWebPage("https://www.google.com/");
         });
 
     }

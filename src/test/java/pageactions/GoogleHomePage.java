@@ -16,8 +16,8 @@ public class GoogleHomePage extends BasePage {
         System.out.println("second");
     }
 
-    public void lauchWebPage(String websiteUrl){
-        driver.get(websiteUrl);
+    public void launchWebPage(String url){
+        lauchUrl(url);
         ui = new GoogleHomePageUI(driver);
     }
 

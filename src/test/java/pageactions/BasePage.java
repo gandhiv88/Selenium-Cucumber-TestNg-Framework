@@ -13,4 +13,9 @@ public class BasePage {
         driver = d;
     }
 
+    public void lauchUrl(String url){
+        driver.get(url);
+        driver.manage().window().maximize();
+    }
+
 }

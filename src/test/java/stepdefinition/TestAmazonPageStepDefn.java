@@ -18,11 +18,6 @@ public class TestAmazonPageStepDefn implements En {
 
     public TestAmazonPageStepDefn(BaseStepDefinition base){
         baseStepDefinition = base;
-        Given("^Launch amazon website$", () -> {
-            driver = baseStepDefinition.getDriver();
-            hp = new AmazonHomePage(driver);
-            hp.lauchWebPage("https://www.amazon.com/");
-        });
 
         Then("^Amazon launch page is displayed$", () -> {
             // Write code here that turns the phrase above into concrete actions
@@ -38,6 +33,11 @@ public class TestAmazonPageStepDefn implements En {
         When("^\"([^\"]*)\" is searched in amazon$", (String searchTerm) -> {
 
             hp.search(searchTerm);
+        });
+        Given("^Launch amazon website in \"([^\"]*)\"$", (String browser) -> {
+            driver = baseStepDefinition.getDriver(browser.toUpperCase());
+            hp = new AmazonHomePage(driver);
+            hp.lauchWebPage("https://www.amazon.com/");
         });
     }
 }
