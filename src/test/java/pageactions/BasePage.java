@@ -1,4 +1,4 @@
-package pageobjects.homepage;
+package pageactions;
 
 import org.openqa.selenium.WebDriver;
 
@@ -12,4 +12,5 @@ public class BasePage {
     public BasePage(WebDriver d){
         driver = d;
     }
+
 }
