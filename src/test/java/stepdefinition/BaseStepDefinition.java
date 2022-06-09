@@ -5,13 +5,14 @@ import io.cucumber.java8.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 /**
  * Created by Gandhi on 12/13/2016.
  */
 public class BaseStepDefinition implements En {
 
-    private static boolean intialized = false;
+    private boolean intialized = false;
     WebDriver driver;
 
     public BaseStepDefinition() {
@@ -19,11 +20,7 @@ public class BaseStepDefinition implements En {
         Before((Scenario scenario) ->
         {
             System.out.println("launched");
-            if(!intialized) {
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
-                intialized = true;
-            }
+
         });
 
         After((Scenario scenario) ->{
@@ -33,7 +30,23 @@ public class BaseStepDefinition implements En {
         });
     }
 
-    public WebDriver getDriver(){
+    public WebDriver getDriver(String browser){
+
+        if(!intialized) {
+            switch (browser){
+                case "CHROME":
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                    break;
+                case "SAFARI":
+                    WebDriverManager.safaridriver().setup();
+                    driver = new SafariDriver();
+                    break;
+            }
+
+            intialized = true;
+        }
+
         return driver;
     }
 
